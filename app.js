@@ -13,6 +13,7 @@ app.use(express.json()); // Parse JSON requests
 // Routes
 app.use('/api/v1/contact', require('./routes/contact'));
 
+
 // Error handling middleware
 app.use(require('./middleware/notFound')); // Not found middleware
 app.use(require('./middleware/errorMiddleware')); // Error middleware
