@@ -5,7 +5,7 @@ require('dotenv').config();
 const connect = require('./db/db');
 require('express-async-errors');
 
-const PORT = 4000 || process.env.PORT
+const PORT = process.env.PORT ||  4000 
 
 app.use(cors);
 app.use(express.json());
