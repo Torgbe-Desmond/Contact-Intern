@@ -5,6 +5,8 @@ require('dotenv').config();
 const connect = require('./db/db');
 require('express-async-errors');
 
+const PORT = 4000 || process.env.PORT
+
 app.use(cors);
 app.use(express.json());
 
@@ -16,8 +18,8 @@ app.use(require('./middleware/notFound'))
 
 const start= async()=>{
     await connect(process.env.MONGO_URI)
-    app.listen(process.env.PORT,()=>{
-        console.log(`App is running on port ${process.env.PORT}`)
+    app.listen(PORT,()=>{
+        console.log(`App is running on port ${PORT}`)
     })
 }   
 
